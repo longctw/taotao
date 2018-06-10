@@ -19,7 +19,7 @@ public class SearchListener {
 	
 	@JmsListener(destination = "MQ_TOPIC_ITEM_ADD")
 	public void receiveTopic(long itemId){
-		System.out.println(itemId+">>>>>>>>>>>>>>>>>>>>>>>>>同步索引库<<<<<<<<<<<<<<<<<<<<<<<<<");
+		//System.out.println(itemId+">>>>>>>>>>>>>>>>>>>>>>>>>同步索引库<<<<<<<<<<<<<<<<<<<<<<<<<");
 		SearchItem item = searchItemMapper.selectItemById(itemId);
 		searchService.importItemIndex(item);
 	}
